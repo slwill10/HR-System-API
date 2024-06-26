@@ -16,9 +16,19 @@ public class VagaController {
     @Autowired
     private VagaRepository vr;
 
-    @GetMapping("/vagas")
+    @GetMapping("/vagasdto")
     public List<VagaDto> listaVagasDto() {
         List<Vaga> vagas = vr.findAll();
-        return vagas.stream().map(vaga -> new VagaDto(vaga.getNome(), vaga.getEmpresa().getNome(), vaga.getModalidade(), vaga.getDescricao(), vaga.getLocalidade())).collect(Collectors.toList());
+        return vagas.stream().map(vaga -> new VagaDto(
+                vaga.getNome(),
+                vaga.getLocalidade(),
+                vaga.getModalidade(),
+                vaga.getDescricao(),
+                vaga.getEmpresa().getNome(),
+                Integer.parseInt(vaga.getSalario()),
+                vaga.getNumDeVagas(),
+                vaga.getFormaçãoAcademica(),
+                vaga.getResponsabilidadeEAtribuicoes()
+        )).collect(Collectors.toList());
     }
 }

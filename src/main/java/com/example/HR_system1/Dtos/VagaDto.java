@@ -9,15 +9,55 @@ public class VagaDto {
     private String modalidade;
     private String empresa;
     private String descricao;
+    private int salario;
+    private int numDeVagas;
+    private String formacaoAcademica;
+    private String responsabiidadesEAtribuicoes;
 
 
-    public VagaDto(String nome, String endereco, String modalidade, String empresa, String descricao) {
+    public VagaDto(String nome, String endereco, String modalidade, String descricao, String empresa, int salario, int numDeVagas, String formacaoAcademica, String responsabiidadesEAtribuicoes) {
         this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.modalidade = modalidade;
-        this.empresa = empresa;
         this.descricao = descricao;
+        this.empresa = empresa;
+        this.salario = salario;
+        this.numDeVagas = numDeVagas;
+        this.formacaoAcademica = formacaoAcademica;
+        this.responsabiidadesEAtribuicoes = responsabiidadesEAtribuicoes;
+    }
+
+    public int getNumDeVagas() {
+        return numDeVagas;
+    }
+
+    public void setNumDeVagas(int numDeVagas) {
+        this.numDeVagas = numDeVagas;
+    }
+
+    public String getFormacaoAcademica() {
+        return formacaoAcademica;
+    }
+
+    public void setFormacaoAcademica(String formacaoAcademica) {
+        this.formacaoAcademica = formacaoAcademica;
+    }
+
+    public String getResponsabiidadesEAtribuicoes() {
+        return responsabiidadesEAtribuicoes;
+    }
+
+    public void setResponsabiidadesEAtribuicoes(String responsabiidadesEAtribuicoes) {
+        this.responsabiidadesEAtribuicoes = responsabiidadesEAtribuicoes;
+    }
+
+    public int getSalario() {
+        return salario;
+    }
+
+    public void setSalario(int salario) {
+        this.salario = salario;
     }
 
     public int getId() {
